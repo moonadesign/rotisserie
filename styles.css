@@ -1,0 +1,37 @@
+.container {
+  height: 300vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 50vh;
+}
+
+.rotisserie {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform-origin: center;
+  backface-visibility: hidden;
+  font-size: 1.2em;
+  border-radius: 10px;
+  transition: transform 0.5s ease-out;
+}
+
+/* Initial positions */
+.item:nth-child(1) { transform: translateY(0) translateZ(200px); }
+.item:nth-child(2) { transform: translateY(120px) translateZ(120px); }
+.item:nth-child(3) { transform: translateY(200px) translateZ(-50px); }
+.item:nth-child(4) { transform: translateY(120px) translateZ(-200px); }
+.item:nth-child(5) { transform: translateY(0) translateZ(-150px); }
