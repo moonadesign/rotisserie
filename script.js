@@ -20,6 +20,11 @@ document.addEventListener('scroll', () => {
     const zIndex = Math.round(z);
     item.style.zIndex = zIndex;
     
+    // Force cards to move behind when going down
+    if (y > 0) {
+      item.style.zIndex = -Math.abs(zIndex);
+    }
+    
     item.style.transform = `translateY(${y}px) translateZ(${z}px)`;
   });
 });
